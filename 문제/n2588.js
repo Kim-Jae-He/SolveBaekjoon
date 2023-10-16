@@ -4,8 +4,15 @@ const fs = require('fs');
 // const input = fs.readFileSync("/dev/stdin").toString().split(' ');
 
 //문제풀이용
-const input = fs.readFileSync('example.txt').toString().split(' ');
+const input = fs.readFileSync('example.txt').toString().split('\n');
 
-var a = parseInt(input[0]);
-var b = parseInt(input[1]);
-console.log(a / b);
+const [a, b] = input;
+const [q, w, e] = b;
+
+console.log(a);
+console.log(b[q]);
+
+console.log(parseInt(a) * parseInt(b[2]));
+console.log(a * b[1]);
+console.log(a * b[0]);
+console.log(a * b);
