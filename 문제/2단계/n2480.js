@@ -6,10 +6,18 @@ const fs = require('fs');
 //문제풀이용
 const input = fs.readFileSync('example.txt').toString().split(' ');
 
-var a = parseInt(input[0]);
 
-if ((a % 4 === 0 && a % 100 !== 0) || a % 400 === 0) {
-  console.log('1');
+
+const [A, B, C] = input;
+
+if (A !== B && A !== C && B !== C) {
+    console.log(A * 100);
+} else if (A === B && B !== C) {
+    console.log(1000 + A * 100);
+} else if (B === C && C !== A) {
+    console.log(1000 + C * 100);
+} else if (C === A && A !== B) {
+    console.log(1000 + C * 100);
 } else {
-  console.log('0');
+    console.log(10000 + A * 1000);
 }
